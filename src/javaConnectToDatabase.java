@@ -18,8 +18,8 @@ public class javaConnectToDatabase {
     {
         Connection conn;
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","12345678");
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/library?autoReconnect=true&useSSL=false","root","12345678");
             Statement stmt=conn.createStatement();
             System.out.println("connected!");
             return conn;
